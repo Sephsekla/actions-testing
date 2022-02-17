@@ -25,6 +25,6 @@ jobs:
         with:
           PATTERNS: |
            changelog/*.md
-        run: exit 1
+      - run: exit 1
         if: ! env.GIT_DIFF
 
