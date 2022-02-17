@@ -12,7 +12,7 @@ jobs:
         with:
           PATTERNS: |
            changelog/*.md
-      - run: exit 1
-        if: ! env.GIT_DIFF
       - run: exit 0
+        if: env.GIT_DIFF
+      - run: exit 1
 
