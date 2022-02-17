@@ -4,6 +4,7 @@ on:
     types: [opened, labeled, unlabeled, synchronize]
 jobs:
   label:
+    name: Check for Labels
     runs-on: ubuntu-latest
     steps:
       - uses: mheap/github-action-required-labels@v1
@@ -15,16 +16,4 @@ jobs:
         with:
           mode: exactly
           count: 0
-          labels: "do not merge"
-  changelog:
-    name: Changelog
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: technote-space/get-diff-action@v6
-        with:
-          PATTERNS: |
-           changelog/*.md
-      - run: exit 1
-        if: ! env.GIT_DIFF
-
+          labels: "Do_Not_Merge"
